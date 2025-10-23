@@ -38,6 +38,6 @@ python create_model_train_save.py
 
 bash
 
-pip install pandas numpy scikit-learn yfinance
+pip install pandas numpy scikit-learn yfinance tensorflow
 
 **Примечание:** Модель предоставляет вероятностные прогнозы, не являющиеся финансовой рекомендацией.
