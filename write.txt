@@ -1,0 +1,78 @@
+print("Start data save code")
+# Формируем имя файла
+        filename = f"{ticker}.csv"
+# Списки самых важных тикеров по каждой категории
+STOCKS = [
+    # US Stocks (30)
+    'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META', 'TSLA', 'NVDA', 'JPM', 'JNJ', 'V',
+    'PG', 'UNH', 'HD', 'MA', 'DIS', 'ADBE', 'NFLX', 'PYPL', 'INTC', 'CMCSA',
+    'PFE', 'CSCO', 'PEP', 'ABT', 'TMO', 'AVGO', 'ACN', 'CRM', 'TXN', 'QCOM',
+    # International Stocks (20)
+    'TSM', 'ASML', 'NSRGY', 'SAP', 'LIN', 'NVO', 'HSBC', 'SAN', 'AIR', 'BMW',
+    'SIEGY', 'TTE', 'UL', 'AZN', 'RY', 'BHP', 'RIO', 'NVS', 'TM', 'SONY'
+]
+
+FOREX = [
+    # Major Pairs (15)
+    'EURUSD=X', 'GBPUSD=X', 'USDJPY=X', 'USDCHF=X', 'AUDUSD=X',
+    'USDCAD=X', 'NZDUSD=X', 'EURGBP=X', 'EURJPY=X', 'GBPJPY=X',
+    'EURCHF=X', 'AUDJPY=X', 'USDCNY=X', 'USDHKD=X', 'USDSGD=X',
+    # Minor Pairs (15)
+    'EURCAD=X', 'EURAUD=X', 'EURSEK=X', 'EURNZD=X', 'GBPCAD=X',
+    'GBPAUD=X', 'GBPCHF=X', 'AUDCAD=X', 'AUDNZD=X', 'CADJPY=X',
+    'CHFJPY=X', 'NZDJPY=X', 'SGDJPY=X', 'TRYJPY=X', 'ZARJPY=X',
+    # Exotic Pairs (20)
+    'USDTRY=X', 'USDZAR=X', 'USDMXN=X', 'USDTHB=X', 'USDPLN=X',
+    'USDCZK=X', 'USDHUF=X', 'USDDKK=X', 'USDNOK=X', 'USDSEK=X',
+    'USDRUB=X', 'USDINR=X', 'USDBRL=X', 'USDKRW=X', 'USDTWD=X',
+    'USDPHP=X', 'USDIDR=X', 'USDMYR=X', 'USDVND=X', 'USDARS=X'
+]
+
+COMMODITIES = [
+    # Precious Metals (10)
+    'GC=F', 'SI=F', 'PL=F', 'PA=F', 'HG=F',
+    'GLD', 'SLV', 'PPLT', 'GDX', 'GDXJ',
+    # Energy (15)
+    'CL=F', 'BZ=F', 'NG=F', 'HO=F', 'RB=F',
+    'UNG', 'USO', 'BNO', 'UCO', 'SCO',
+    'DBO', 'XLE', 'XOP', 'VDE', 'IEZ',
+    # Agriculture (15)
+    'ZC=F', 'ZW=F', 'ZS=F', 'ZL=F', 'ZO=F',
+    'KE=F', 'CC=F', 'KC=F', 'CT=F', 'SB=F',
+    'LB=F', 'CORN', 'WEAT', 'SOYB', 'CANE',
+    # Livestock & Other (10)
+    'LE=F', 'HE=F', 'GF=F', 'ALI=F', 'CSC=F',
+    'BAL', 'JO', 'NIB', 'COW', 'JJG'
+]
+
+CRYPTO = [
+    # Major Cryptos (15)
+    'BTC-USD', 'ETH-USD', 'BNB-USD', 'XRP-USD', 'ADA-USD',
+    'SOL-USD', 'DOT-USD', 'DOGE-USD', 'AVAX-USD', 'MATIC-USD',
+    'LTC-USD', 'LINK-USD', 'ATOM-USD', 'XLM-USD', 'ALGO-USD',
+    # Mid Cap Cryptos (20)
+    'ETC-USD', 'XMR-USD', 'EOS-USD', 'XTZ-USD', 'AAVE-USD',
+    'UNI-USD', 'FIL-USD', 'THETA-USD', 'VET-USD', 'TRX-USD',
+    'ICP-USD', 'FTM-USD', 'NEAR-USD', 'GRT-USD', 'SAND-USD',
+    'AXS-USD', 'APE-USD', 'QNT-USD', 'RUNE-USD', 'KSM-USD',
+    # Small Cap Cryptos (15)
+    'CHZ-USD', 'ENJ-USD', 'MANA-USD', 'GALA-USD', 'CRV-USD',
+    'COMP-USD', 'MKR-USD', 'SNX-USD', 'YFI-USD', 'UMA-USD',
+    'BAT-USD', 'ZEC-USD', 'DASH-USD', 'NEO-USD', 'WAVES-USD'
+]
+
+ETFS = [
+    # US Equity ETFs (10)
+    'SPY', 'QQQ', 'IWM', 'DIA', 'VTI',
+    'VOO', 'IVV', 'VUG', 'VTV', 'VOOG',
+    # International ETFs (5)
+    'VEA', 'VWO', 'EFA', 'EEM', 'IEMG',
+    # Sector ETFs (5)
+    'XLK', 'XLV', 'XLF', 'XLE', 'XLI',
+    # Bond ETFs (5)
+    'BND', 'AGG', 'TLT', 'IEF', 'LQD',
+    # Commodity & Specialty ETFs (5)
+    'GLD', 'SLV', 'USO', 'UNG', 'VNQ'
+]
+
+print()
