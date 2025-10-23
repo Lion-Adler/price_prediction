@@ -7,24 +7,20 @@
 1. **Сначала запустите загрузку данных:**
     
 
-bash
-
+```
 python data/data_yf/create_dara_yfinance.py
+```
 
 2. **Затем обработайте данные:**
     
-
-bash
-
+```
 python data/data_training.py
-
+```
 3. **Наконец, обучите модель:**
     
-
-bash
-
+```
 python create_model_train_save.py
-
+```
 ## Особенности
 
 - **Нормировка данных:** rolling window нормализация
@@ -36,8 +32,7 @@ python create_model_train_save.py
 
 ## Требования
 
-bash
-
+```
 pip install pandas numpy scikit-learn yfinance tensorflow
-
+```
 **Примечание:** Модель предоставляет вероятностные прогнозы, не являющиеся финансовой рекомендацией.
